@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Posts</title>
+</head>
+<body>
+    <h1>Campus Posts</h1>
+    <ul>
+        {% for post in posts %}
+        <li>
+            <strong>{{ post.name }}</strong><br>
+            Review: {{ post.review }}<br>
+            {% if post.photo %}
+            <img src="{{ url_for('static', filename='uploads/' + post.photo) }}" alt="{{ post.name }}" width="200">
+            {% endif %}
+            {% if post.video %}
+            <video width="320" height="240" controls>
+                <source src="{{ url_for('static', filename='uploads/' + post.video) }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            {% endif %}
+        </li>
+        {% else %}
+        <li>No posts yet!</li>
+        {% endfor %}
+    </ul>
+    <a href="/add_content">Add New Content</a>
+</body>
+</html>
