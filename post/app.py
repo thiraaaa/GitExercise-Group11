@@ -5,15 +5,12 @@ from werkzeug.utils import secure_filename
 app = Flask(__name__)
 app.secret_key = "supersecretkey"
 
-# Set the upload folder path for photos and videos
-UPLOAD_FOLDER = 'uploads/'
+UPLOAD_FOLDER = 'post/uploads/'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-# Allowed file extensions
 ALLOWED_EXTENSIONS_PHOTO = {'png', 'jpg', 'jpeg', 'gif'}
 ALLOWED_EXTENSIONS_VIDEO = {'mp4'}
 
-# Temporary storage for posts (can be replaced with a database later)
 posts = []
 
 # Check if file extension is allowed
@@ -22,7 +19,7 @@ def allowed_file(filename, allowed_extensions):
 
 @app.route('/')
 def index():
-    return render_template('base.html', posts=posts)
+    return render_template('index.html', posts=posts)
 
 @app.route('/add_content', methods=['GET', 'POST'])
 def add_content():
@@ -57,9 +54,9 @@ def add_content():
             'video': video_filename
         })
         flash(f'Content for "{name}" posted successfully!', 'success')
-        return redirect(url_for('base'))
+        return redirect(url_for('index'))
 
-    return render_template('post.html')
+    return render_template('post_content.html')
 
 if __name__ == '__main__':
     if not os.path.exists(UPLOAD_FOLDER):
