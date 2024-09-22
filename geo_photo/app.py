@@ -18,67 +18,67 @@ places_data = {
     },
     "faculty_computing": {
         "name": "Faculty of Computing & Informatics",
-        "photo":[{"filename": "", "review": ""}],
+        "photos":[{"filename": "", "review": ""}],
         "videos": []
     },
     "DTC": {
         "name": "Dewan Tun Chancellor",
-        "photo":[{"filename": "", "review": ""}],
+        "photos":[{"filename": "", "review": ""}],
         "videos": []
     },
     "faculty_engineering": {
         "name": "Faculty of Engineering",
-        "photo":[{"filename": "", "review": ""}],
+        "photos":[{"filename": "", "review": ""}],
         "videos": []
     },
     "faculty_multimedia": {
         "name": "Faculty of Creative Multimedia",
-        "photo":[{"filename": "", "review": ""}],
+        "photos":[{"filename": "", "review": ""}],
         "videos": []
     },
     "SHDL": {
         "name": "Siti Hasmah Digital Library",
-        "photo":[{"filename": "", "review": ""}],
+        "photos":[{"filename": "", "review": ""}],
         "videos": []
     },
     "MPH": {
         "name": "Multipurpose Hall",
-        "photo":[{"filename": "", "review": ""}],
+        "photos":[{"filename": "", "review": ""}],
         "videos": []
     },
     "inst_postgraduate": {
         "name": "Inst. Postgraduate",
-        "photo":[{"filename": "", "review": ""}],
+        "photos":[{"filename": "", "review": ""}],
         "videos": []
     },
     "adm_int_office": {
         "name": "Admission & International Office",
-        "photo":[{"filename": "", "review": ""}],
+        "photos":[{"filename": "", "review": ""}],
         "videos": []
     },
     "SSC": {
         "name": "Student Service Centre",
-        "photo":[{"filename": "", "review": ""}],
+        "photos":[{"filename": "", "review": ""}],
         "videos": []
     },
     "starbees": {
         "name": "MMU Starbees",
-        "photo":[{"filename": "", "review": ""}],
+        "photos":[{"filename": "", "review": ""}],
         "videos": []
     },
     "hostel_HB3": {
         "name": "MMU Hostel HB3",
-        "photo":[{"filename": "", "review": ""}],
+        "photos":[{"filename": "", "review": ""}],
         "videos": []
     },
     "hostel_HB4": {
         "name": "MMU Hostel HB1",
-        "photo":[{"filename": "", "review": ""}],
+        "photos":[{"filename": "", "review": ""}],
         "videos": []
     },
     "surau": {
         "name": "Surau Al-Hidayah MMU",
-        "photo":[{"filename": "", "review": ""}],
+        "photos":[{"filename": "", "review": ""}],
         "videos": []
     }
 }
@@ -103,7 +103,7 @@ def map_marker():
                   icon=folium.Icon(color='red'),
                   tooltip="Click Here").add_to(map)
 
-    folium.Marker(location=[2.926398,101.641284], popup=folium.Popup('<a href="/placxe/faculty_engineering">Faculty of Engineering</a>', max_width=300),
+    folium.Marker(location=[2.926398,101.641284], popup=folium.Popup('<a href="/place/faculty_engineering">Faculty of Engineering</a>', max_width=300),
                   icon=folium.Icon(color='red'),
                   tooltip="Click Here").add_to(map)
 
@@ -151,8 +151,9 @@ def map_marker():
 @app.route('/place/<place_id>', methods=['GET'])
 def place_data(place_id):
     if place_id in places_data:
-        return render_template('album.htm', places_data[place_id], place=places_data[place_id])
-    return render_template('error.html', message="Place not found"), 404
+        return render_template('album.html', place=places_data[place_id], place_id=place_id)
+    else:
+        return render_template('error.html', message="Place not found"), 404
 
 @app.route('/upload', methods=['POST'])
 def upload_file():

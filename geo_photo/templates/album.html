@@ -13,8 +13,9 @@
         {% if place.photos %}
             {% for photo in place.photos %}
                 <div>
-                    <img src="/static/uploads/{{ photo.filename }}" width="200">
-                    <p>{{ photo.review }}</p>
+                    {% if photo.filename %}
+                        <img src="/static/uploads/{{ photo.filename }}" width="200">
+                    {% endif %}
                 </div>
             {% endfor %}
         {% else %}
