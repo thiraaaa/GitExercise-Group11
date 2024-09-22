@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ place.name }} Album</title>
+    </head>
+    <body>
+        <h1>{{ place.name }} Photo Album</h1>
+
+    <h2>Photos</h2>
+    <div id="photos">
+        {% if place.photos %}
+            {% for photo in place.photos %}
+                <div>
+                    <img src="/static/uploads/{{ photo.filename }}" width="200">
+                    <p>{{ photo.review }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No photos available for this place.</p>
+        {% endif %}
+    </div>
+
+    <h2>Reviews</h2>
+    <div id="reviews">
+        {% if place.photos %}
+            {% for photo in place.photos %}
+                <p>{{ photo.review }}</p>
+            {% endfor %}
+        {% else %}
+            <p>No reviews available for this place.</p>
+        {% endif %}
+        </div>
+
+    <h2>Submit a Review</h2>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="place_id" value="{{ place_id }}">
+        
+        <label for="review">Review:</label><br>
+        <textarea name="review" rows="4" cols="50" required></textarea><br><br>
+
+        <label for="file">Upload Photo (optional):</label><br>
+        <input type="file" name="file" accept="image/*"><br><br>
+
+        <button type="submit">Submit Review</button>
+    </form>
+
+    <br><br>
+    <a href="/">Back to Map</a>
+        
+    </body>
+</html>

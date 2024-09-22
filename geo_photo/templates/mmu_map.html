@@ -9,7 +9,7 @@
 <body>
     <div class="container">
         <h1>MMU Cyberjaya Map</h1>
-        <iframe src="http://127.0.0.1:5000/map-marker" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <iframe src="/map-marker" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         <div id="photo-album" style="display:none;">
             <h2 id="places-name"></h2>
             <div id="photos"></div>
@@ -19,6 +19,8 @@
     <script>
         function loadAlbum(place_id) {
             $.getJSON(`/place/${place_id}`, function(data) {
+                console.log(data);
+
                 if (data.error) {
                     alert(data.error);
                 } else {
@@ -43,7 +45,6 @@
                 }
             });
         }
-        loadAlbum('place_1'); 
     </script>
 </body>
 </html>

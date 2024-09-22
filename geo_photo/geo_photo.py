@@ -10,74 +10,74 @@ ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif', 'mp4'}
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 places_data = {
-    "place_1": {
+    "faculty_management": {
         "name": "Faculty of Management",
-        "photos": [],
+        "photos": [{"filename": "", "review": ""}],
         "videos": []
     },
-    "place_2": {
+    "faculty_computing": {
         "name": "Faculty of Computing & Informatics",
-        "photo":[],
+        "photo":[{"filename": "", "review": ""}],
         "videos": []
     },
-    "place_3": {
+    "DTC": {
         "name": "Dewan Tun Chancellor",
-        "photo":[],
+        "photo":[{"filename": "", "review": ""}],
         "videos": []
     },
-    "place_4": {
+    "faculty_engineering": {
         "name": "Faculty of Engineering",
-        "photo":[],
+        "photo":[{"filename": "", "review": ""}],
         "videos": []
     },
-    "place_5": {
+    "faculty_multimedia": {
         "name": "Faculty of Creative Multimedia",
-        "photo":[],
+        "photo":[{"filename": "", "review": ""}],
         "videos": []
     },
-    "place_6": {
+    "SHDL": {
         "name": "Siti Hasmah Digital Library",
-        "photo":[],
+        "photo":[{"filename": "", "review": ""}],
         "videos": []
     },
-    "place_7": {
+    "MPH": {
         "name": "Multipurpose Hall",
-        "photo":[],
+        "photo":[{"filename": "", "review": ""}],
         "videos": []
     },
-    "place_8": {
+    "inst_postgraduate": {
         "name": "Inst. Postgraduate",
-        "photo":[],
+        "photo":[{"filename": "", "review": ""}],
         "videos": []
     },
-    "place_9": {
+    "adm_int_office": {
         "name": "Admission & International Office",
-        "photo":[],
+        "photo":[{"filename": "", "review": ""}],
         "videos": []
     },
-    "place_10": {
+    "SSC": {
         "name": "Student Service Centre",
-        "photo":[],
+        "photo":[{"filename": "", "review": ""}],
         "videos": []
     },
-    "place_11": {
+    "starbees": {
         "name": "MMU Starbees",
-        "photo":[],
+        "photo":[{"filename": "", "review": ""}],
         "videos": []
     },
-    "place_12": {
+    "hostel_HB3": {
         "name": "MMU Hostel HB3",
-        "photo":[],
+        "photo":[{"filename": "", "review": ""}],
         "videos": []
     },
-    "place_13": {
+    "hostel_HB4": {
         "name": "MMU Hostel HB1",
-        "photo":[],
+        "photo":[{"filename": "", "review": ""}],
         "videos": []
     },
-    "place_14": {
+    "surau": {
         "name": "Surau Al-Hidayah MMU",
-        "photo":[],
+        "photo":[{"filename": "", "review": ""}],
         "videos": []
     }
 }
@@ -85,8 +85,8 @@ places_data = {
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-@app.route('/')
-def index():
+@app.route('/mmu-map')
+def mmu_map():
     return render_template('mmu_map.html')
 
 @app.route('/place/<place_id>', methods=['GET'])
