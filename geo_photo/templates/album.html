@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ place.name }} Album</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     </head>
     <body>
         <h1>{{ place.name }} Photo Album</h1>
@@ -27,7 +28,21 @@
     <div id="reviews">
         {% if place.photos %}
             {% for photo in place.photos %}
+                {% if photo.review %}
                 <p>{{ photo.review }}</p>
+            {% endif %}
+
+            {% if photo.review or photo.filename %}
+            <p>Likes: {{ photo.likes }}</p>
+            
+            <form action="/like_review" method="POST">
+                <input type="hidden" name="place_id" value="{{ place_id }}">
+                <input type="hidden" name="review_index" value="{{ loop.index0 }}">
+                <button type="submit" style="background:none;border:none;">
+                    <i class="fas fa-heart" style="color:red;"></i>
+                </button>
+            </form>
+        {% endif %}
             {% endfor %}
         {% else %}
             <p>No reviews available for this place.</p>

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, jsonify
+from flask import Flask, render_template, request, redirect, url_for
 from werkzeug.utils import secure_filename
 import os
 import folium
@@ -6,80 +6,66 @@ import folium
 app = Flask(__name__)
 
 UPLOAD_FOLDER = 'static/uploads'
-ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif', 'mp4'}
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 places_data = {
     "faculty_management": {
         "name": "Faculty of Management",
-        "photos": [{"filename": "fom-mmu.jpg", "review": "WOW!! I LOVE THIS PLACE"}],
-        "videos": []
+        "photos": [{"filename": "", "review": "", "likes": 0}],
     },
     "faculty_computing": {
         "name": "Faculty of Computing & Informatics",
-        "photos":[{"filename": "", "review": ""}],
-        "videos": []
+        "photos":[{"filename": "", "review": "", "likes": 0}],
     },
     "DTC": {
         "name": "Dewan Tun Chancellor",
-        "photos":[{"filename": "", "review": ""}],
-        "videos": []
+        "photos":[{"filename": "", "review": "", "likes": 0}],
     },
     "faculty_engineering": {
         "name": "Faculty of Engineering",
-        "photos":[{"filename": "", "review": ""}],
-        "videos": []
+        "photos":[{"filename": "", "review": "", "likes": 0}],
     },
     "faculty_multimedia": {
         "name": "Faculty of Creative Multimedia",
-        "photos":[{"filename": "", "review": ""}],
-        "videos": []
+        "photos":[{"filename": "", "review": "", "likes": 0}],
     },
     "SHDL": {
         "name": "Siti Hasmah Digital Library",
-        "photos":[{"filename": "", "review": ""}],
-        "videos": []
+        "photos":[{"filename": "", "review": "", "likes": 0}],
     },
     "MPH": {
         "name": "Multipurpose Hall",
-        "photos":[{"filename": "", "review": ""}],
-        "videos": []
+        "photos":[{"filename": "", "review": "", "likes": 0}],
     },
     "inst_postgraduate": {
         "name": "Inst. Postgraduate",
-        "photos":[{"filename": "", "review": ""}],
-        "videos": []
+        "photos":[{"filename": "", "review": "", "likes": 0}],
     },
     "adm_int_office": {
         "name": "Admission & International Office",
-        "photos":[{"filename": "", "review": ""}],
-        "videos": []
+        "photos":[{"filename": "", "review": "", "likes": 0}],
     },
     "SSC": {
         "name": "Student Service Centre",
-        "photos":[{"filename": "", "review": ""}],
-        "videos": []
+        "photos":[{"filename": "", "review": "", "likes": 0}],
     },
     "starbees": {
         "name": "MMU Starbees",
-        "photos":[{"filename": "", "review": ""}],
-        "videos": []
+        "photos":[{"filename": "", "review": "", "likes": 0}],
     },
     "hostel_HB3": {
         "name": "MMU Hostel HB3",
-        "photos":[{"filename": "", "review": ""}],
-        "videos": []
+        "photos":[{"filename": "", "review": "", "likes": 0}],
     },
     "hostel_HB4": {
         "name": "MMU Hostel HB1",
-        "photos":[{"filename": "", "review": ""}],
-        "videos": []
+        "photos":[{"filename": "", "review": "", "likes": 0}],
     },
     "surau": {
         "name": "Surau Al-Hidayah MMU",
-        "photos":[{"filename": "", "review": ""}],
-        "videos": []
+        "photos":[{"filename": "", "review": "", "likes": 0}],
     }
 }
 
@@ -167,13 +153,37 @@ def upload_file():
 
         places_data[place_id]['photos'].append({
             "filename": filename,
-            "review": review 
+            "review": review,
+            "likes": 0 
         })
     else:
          places_data[place_id]['photos'].append({
             "filename": "", 
-            "review": review
+            "review": review,
+            "likes": 0 
         })
+
+    return redirect(url_for('place_data', place_id=place_id))
+
+@app.route('/like_review', methods=['POST'])
+def like_review():
+    place_id = request.form['place_id']  
+    review_index = int(request.form['review_index'])  
+    
+    if place_id not in places_data:
+        print(f"Error: place_id '{place_id}' not found")
+        return f"Error: place_id '{place_id}' not found", 400
+
+    if review_index >= len(places_data[place_id]['photos']):
+        print(f"Error: review_index '{review_index}' out of range")
+        return f"Error: review_index '{review_index}' out of range", 400
+
+    if 'likes' not in places_data[place_id]['photos'][review_index]:
+        print(f"Error: 'likes' field not initialized for this review")
+        return "Error: 'likes' field not initialized for this review", 400
+
+    places_data[place_id]['photos'][review_index]['likes'] += 1
+    print(f"Updated likes for review {review_index} to {places_data[place_id]['photos'][review_index]['likes']}")
 
     return redirect(url_for('place_data', place_id=place_id))
 
