@@ -37,8 +37,8 @@
             
             <form action="/like_review" method="POST">
                 <input type="hidden" name="place_id" value="{{ place_id }}">
-                <input type="hidden" name="review_index" value="{{ loop.index0 }}">
-                <button type="submit" style="background:none;border:none;">
+                    <input type="hidden" name="review_index" value="{{ loop.index0 }}">  <!-- This sends the index -->
+                    <button type="submit" style="background:none;border:none;">
                     <i class="fas fa-heart" style="color:red;"></i>
                 </button>
             </form>

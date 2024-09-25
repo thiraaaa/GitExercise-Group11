@@ -72,6 +72,10 @@ places_data = {
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
+@app.route('/')
+def index():
+    return render_template('mmu_map.html')
+
 @app.route('/map-marker')
 def map_marker():
     map = folium.Map(location=[2.9279623186421695, 101.64200330740373], zoom_start=12)
@@ -140,7 +144,7 @@ def place_data(place_id):
         return render_template('album.html', place=places_data[place_id], place_id=place_id)
     else:
         return render_template('error.html', message="Place not found"), 404
-
+    
 @app.route('/upload', methods=['POST'])
 def upload_file():
     place_id = request.form['place_id']
@@ -156,8 +160,9 @@ def upload_file():
             "review": review,
             "likes": 0 
         })
+
     else:
-         places_data[place_id]['photos'].append({
+        places_data[place_id]['photos'].append({
             "filename": "", 
             "review": review,
             "likes": 0 
