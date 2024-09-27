@@ -4,12 +4,14 @@ db = SQLAlchemy()
 
 class Place(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(100), nullable=False)
-    reviews = db.relationship('Review', backref='place', lazy=True)
+    name = db.Column(db.String(150), nullable=False)
+    photos = db.relationship('Photo', backref='place', lazy=True)
 
-class Review(db.Model):
+class Photo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    review_text = db.Column(db.Text, nullable=False)
+    filename = db.Column(db.String(200), nullable=True)  
+    review = db.Column(db.Text, nullable=True)
     likes = db.Column(db.Integer, default=0)
-    filename = db.Column(db.String(300))  
-    place_id = db.Column(db.Integer, db.ForeignKey('place.id'), nullable=False)\
+    place_id = db.Column(db.Integer, db.ForeignKey('place.id'), nullable=False)
+
+
