@@ -20,8 +20,8 @@ def allowed_file(filename):
 
 @app.before_request
 def create_tables():
-    global initialiazed
-    if not initialiazed:
+    global initialized
+    if not initialized:
         db.create_all()
         if not Place.query.first():  # Only add places if the database is empty
              sample_places = [

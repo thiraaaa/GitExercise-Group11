@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Login</title>
+        <link rel="stylesheet" href="/static/css/style.css">    
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+    </head>
+    <body>
+        <div class="header">
+            <img src="/static/images/MMU-logo.jpg" alt="MMU Logo" class="logo">
+            <h1 class="title">MMU Geo Photo Album</h1>
+        </div>
+        
+        <div class="topnav">
+            <div id="#nav-links" class="nav-links"></div>
+                <nav>    
+                    <a href="/">Home</a>
+                    <a href="/upload">Upload Post</a>
+                    <a href="/map">Map</a>
+>
+                </nav>
+            </div>
+            <a href="javascript:void(0);" class="menu-icon" onclick="toggleMenu()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+
+        <h1>Login</h1>
+
+        {% if username %}
+            <p>Hello, {{ username }}! You are already logged in.</p>
+            <a href="/logout">Logout</a>
+        {% else %}
+            <p>You are not logged in. Please log in to access the home page.</p>
+
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% endif %}
+
+        <form method="POST" action="/login">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            <input type="submit" value="Login">
+        </form>
+        {% endif %}
+
+        <p>Don't have an account? <a href="/register">Register here</a>.</p>
+    </body>
+</html>

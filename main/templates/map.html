@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_e077bc3054dcef437ac795272a6b5a23 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_e077bc3054dcef437ac795272a6b5a23" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_e077bc3054dcef437ac795272a6b5a23 = L.map(
+                "map_e077bc3054dcef437ac795272a6b5a23",
+                {
+                    center: [2.9279623186421695, 101.64200330740373],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 15,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_649890f21f68489bb610a675743b99f9 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_649890f21f68489bb610a675743b99f9.addTo(map_e077bc3054dcef437ac795272a6b5a23);
+        
+    
+            var marker_81ef8099cb69314ed2ca26f56f7c1241 = L.marker(
+                [2.929632, 101.641207],
+                {}
+            ).addTo(map_e077bc3054dcef437ac795272a6b5a23);
+        
+    
+            var icon_effd8c7a2391b65290a66a26d5bb7530 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_81ef8099cb69314ed2ca26f56f7c1241.setIcon(icon_effd8c7a2391b65290a66a26d5bb7530);
+        
+    
+        var popup_ab8aa5a15b70e93ccab425804a348d46 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_5f788f0ade8da6309ec765baa220acd9 = $(`<div id="html_5f788f0ade8da6309ec765baa220acd9" style="width: 100.0%; height: 100.0%;"><a href="/place/faculty_management">Faculty of Management</a></div>`)[0];
+                popup_ab8aa5a15b70e93ccab425804a348d46.setContent(html_5f788f0ade8da6309ec765baa220acd9);
+            
+        
+
+        marker_81ef8099cb69314ed2ca26f56f7c1241.bindPopup(popup_ab8aa5a15b70e93ccab425804a348d46)
+        ;
+
+        
+    
+    
+            marker_81ef8099cb69314ed2ca26f56f7c1241.bindTooltip(
+                `<div>
+                     Click Here
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_24fdcc433f45da663ca91edfb30b0aa7 = L.marker(
+                [2.928741, 101.640955],
+                {}
+            ).addTo(map_e077bc3054dcef437ac795272a6b5a23);
+        
+    
+            var icon_9f61f5faf54a520380ad6f4a805c7597 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_24fdcc433f45da663ca91edfb30b0aa7.setIcon(icon_9f61f5faf54a520380ad6f4a805c7597);
+        
+    
+        var popup_c5310b7a211556e4f3782dc8f649bc22 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_d0bdd116f282efca4675c9172baa457d = $(`<div id="html_d0bdd116f282efca4675c9172baa457d" style="width: 100.0%; height: 100.0%;"><a href="/place/faculty_computing">Faculty of Computing & Informatics</a></div>`)[0];
+                popup_c5310b7a211556e4f3782dc8f649bc22.setContent(html_d0bdd116f282efca4675c9172baa457d);
+            
+        
+
+        marker_24fdcc433f45da663ca91edfb30b0aa7.bindPopup(popup_c5310b7a211556e4f3782dc8f649bc22)
+        ;
+
+        
+    
+    
+            marker_24fdcc433f45da663ca91edfb30b0aa7.bindTooltip(
+                `<div>
+                     Click Here
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f6efdf438993ba170edc4402a9c529d9 = L.marker(
+                [2.928909, 101.642034],
+                {}
+            ).addTo(map_e077bc3054dcef437ac795272a6b5a23);
+        
+    
+            var icon_b08b251545954b8013c4008700135465 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_f6efdf438993ba170edc4402a9c529d9.setIcon(icon_b08b251545954b8013c4008700135465);
+        
+    
+        var popup_e02c1649fc6ab40e9b099325414f3499 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_cb85d862ce3df5bb50faa5bf0a1a8df3 = $(`<div id="html_cb85d862ce3df5bb50faa5bf0a1a8df3" style="width: 100.0%; height: 100.0%;"><a href="/place/DTC">Dewan Tun Chancellor</a></div>`)[0];
+                popup_e02c1649fc6ab40e9b099325414f3499.setContent(html_cb85d862ce3df5bb50faa5bf0a1a8df3);
+            
+        
+
+        marker_f6efdf438993ba170edc4402a9c529d9.bindPopup(popup_e02c1649fc6ab40e9b099325414f3499)
+        ;
+
+        
+    
+    
+            marker_f6efdf438993ba170edc4402a9c529d9.bindTooltip(
+                `<div>
+                     Click Here
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_89310b3389044ad4ac85cc0dd0366e4a = L.marker(
+                [2.926398, 101.641284],
+                {}
+            ).addTo(map_e077bc3054dcef437ac795272a6b5a23);
+        
+    
+            var icon_ce06d579db72e1dc0d70dcc29788ea73 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_89310b3389044ad4ac85cc0dd0366e4a.setIcon(icon_ce06d579db72e1dc0d70dcc29788ea73);
+        
+    
+        var popup_8c41217e1219849cda855e4d0759560b = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_a5c9b45d883cb90f9ba5607255171288 = $(`<div id="html_a5c9b45d883cb90f9ba5607255171288" style="width: 100.0%; height: 100.0%;"><a href="/place/faculty_engineering">Faculty of Engineering</a></div>`)[0];
+                popup_8c41217e1219849cda855e4d0759560b.setContent(html_a5c9b45d883cb90f9ba5607255171288);
+            
+        
+
+        marker_89310b3389044ad4ac85cc0dd0366e4a.bindPopup(popup_8c41217e1219849cda855e4d0759560b)
+        ;
+
+        
+    
+    
+            marker_89310b3389044ad4ac85cc0dd0366e4a.bindTooltip(
+                `<div>
+                     Click Here
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_09d10af29e1614566ea9202911b06e4b = L.marker(
+                [2.925953, 101.642993],
+                {}
+            ).addTo(map_e077bc3054dcef437ac795272a6b5a23);
+        
+    
+            var icon_d432a6abce2417e468449e4132bf470c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_09d10af29e1614566ea9202911b06e4b.setIcon(icon_d432a6abce2417e468449e4132bf470c);
+        
+    
+        var popup_ab2ddd47b834a967df0c16f50efab6d1 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_91978879d93612ff5de556a83369324a = $(`<div id="html_91978879d93612ff5de556a83369324a" style="width: 100.0%; height: 100.0%;"><a href="/place/faculty_multimedia">Faculty of Creative Multimedia</a></div>`)[0];
+                popup_ab2ddd47b834a967df0c16f50efab6d1.setContent(html_91978879d93612ff5de556a83369324a);
+            
+        
+
+        marker_09d10af29e1614566ea9202911b06e4b.bindPopup(popup_ab2ddd47b834a967df0c16f50efab6d1)
+        ;
+
+        
+    
+    
+            marker_09d10af29e1614566ea9202911b06e4b.bindTooltip(
+                `<div>
+                     Click Here
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c346538277b6e75084c878e14c4b5b29 = L.marker(
+                [2.927451, 101.641672],
+                {}
+            ).addTo(map_e077bc3054dcef437ac795272a6b5a23);
+        
+    
+            var icon_222d81c7876ffbfaf43533dacc723331 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_c346538277b6e75084c878e14c4b5b29.setIcon(icon_222d81c7876ffbfaf43533dacc723331);
+        
+    
+        var popup_33c09d60bbcd89207f46f34b36fbe811 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_bc23d472a4d0859471138829b5c9c982 = $(`<div id="html_bc23d472a4d0859471138829b5c9c982" style="width: 100.0%; height: 100.0%;"><a href="/place/SHDL">Siti Hasmah Digital Library</a></div>`)[0];
+                popup_33c09d60bbcd89207f46f34b36fbe811.setContent(html_bc23d472a4d0859471138829b5c9c982);
+            
+        
+
+        marker_c346538277b6e75084c878e14c4b5b29.bindPopup(popup_33c09d60bbcd89207f46f34b36fbe811)
+        ;
+
+        
+    
+    
+            marker_c346538277b6e75084c878e14c4b5b29.bindTooltip(
+                `<div>
+                     Click Here
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e9b43880fe8437357645a90a6f3664ae = L.marker(
+                [2.927943, 101.64221],
+                {}
+            ).addTo(map_e077bc3054dcef437ac795272a6b5a23);
+        
+    
+            var icon_a94b75909e6d6ecb14ccc1150593c82e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_e9b43880fe8437357645a90a6f3664ae.setIcon(icon_a94b75909e6d6ecb14ccc1150593c82e);
+        
+    
+        var popup_5e9aa997493d6c2c557ab8b1803b090d = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_fea890fabc44609c3c6724ca5cf167ef = $(`<div id="html_fea890fabc44609c3c6724ca5cf167ef" style="width: 100.0%; height: 100.0%;"><a href="/place/MPH">Multipurpose Hall</a></div>`)[0];
+                popup_5e9aa997493d6c2c557ab8b1803b090d.setContent(html_fea890fabc44609c3c6724ca5cf167ef);
+            
+        
+
+        marker_e9b43880fe8437357645a90a6f3664ae.bindPopup(popup_5e9aa997493d6c2c557ab8b1803b090d)
+        ;
+
+        
+    
+    
+            marker_e9b43880fe8437357645a90a6f3664ae.bindTooltip(
+                `<div>
+                     Click Here
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0d238ed27955cd01799fec0d5a7e9cde = L.marker(
+                [2.928828, 101.642894],
+                {}
+            ).addTo(map_e077bc3054dcef437ac795272a6b5a23);
+        
+    
+            var icon_8ed7ebad96c9eb67cc305c5f5e6a1551 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_0d238ed27955cd01799fec0d5a7e9cde.setIcon(icon_8ed7ebad96c9eb67cc305c5f5e6a1551);
+        
+    
+        var popup_fd19e308e7fe8bb0cc7cb4c079dd6b75 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_6c4e3c0ada524cf1870bc924d0231131 = $(`<div id="html_6c4e3c0ada524cf1870bc924d0231131" style="width: 100.0%; height: 100.0%;"><a href="/place/inst_postgraduate">Inst. Postgraduate</a></div>`)[0];
+                popup_fd19e308e7fe8bb0cc7cb4c079dd6b75.setContent(html_6c4e3c0ada524cf1870bc924d0231131);
+            
+        
+
+        marker_0d238ed27955cd01799fec0d5a7e9cde.bindPopup(popup_fd19e308e7fe8bb0cc7cb4c079dd6b75)
+        ;
+
+        
+    
+    
+            marker_0d238ed27955cd01799fec0d5a7e9cde.bindTooltip(
+                `<div>
+                     Click Here
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f2dbd7d5bf5340e62dd74b53ac84d217 = L.marker(
+                [2.929965, 101.642164],
+                {}
+            ).addTo(map_e077bc3054dcef437ac795272a6b5a23);
+        
+    
+            var icon_cbfe2561fbc820efe5e9b530f9afdb39 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_f2dbd7d5bf5340e62dd74b53ac84d217.setIcon(icon_cbfe2561fbc820efe5e9b530f9afdb39);
+        
+    
+        var popup_4ec5bbba4a311f383a3fa05804d901f0 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_de00a210a0e979ec8741eed229c1df6a = $(`<div id="html_de00a210a0e979ec8741eed229c1df6a" style="width: 100.0%; height: 100.0%;"><a href="/place/adm_int_office">Admission & International Office</a></div>`)[0];
+                popup_4ec5bbba4a311f383a3fa05804d901f0.setContent(html_de00a210a0e979ec8741eed229c1df6a);
+            
+        
+
+        marker_f2dbd7d5bf5340e62dd74b53ac84d217.bindPopup(popup_4ec5bbba4a311f383a3fa05804d901f0)
+        ;
+
+        
+    
+    
+            marker_f2dbd7d5bf5340e62dd74b53ac84d217.bindTooltip(
+                `<div>
+                     Click Here
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_0727f1f029f8ed26d7b0580cbf93010a = L.marker(
+                [2.925492, 101.642163],
+                {}
+            ).addTo(map_e077bc3054dcef437ac795272a6b5a23);
+        
+    
+            var icon_b32fcf461b95b0d992cda0dc4039ec83 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_0727f1f029f8ed26d7b0580cbf93010a.setIcon(icon_b32fcf461b95b0d992cda0dc4039ec83);
+        
+    
+        var popup_d7e9ac03d7da57d15755f832af0edd9c = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_47c93a1b4ed4e3e3ad52724aa4487cad = $(`<div id="html_47c93a1b4ed4e3e3ad52724aa4487cad" style="width: 100.0%; height: 100.0%;"><a href="/place/SSC">Student Service Centre</a></div>`)[0];
+                popup_d7e9ac03d7da57d15755f832af0edd9c.setContent(html_47c93a1b4ed4e3e3ad52724aa4487cad);
+            
+        
+
+        marker_0727f1f029f8ed26d7b0580cbf93010a.bindPopup(popup_d7e9ac03d7da57d15755f832af0edd9c)
+        ;
+
+        
+    
+    
+            marker_0727f1f029f8ed26d7b0580cbf93010a.bindTooltip(
+                `<div>
+                     Click Here
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_73495ac67ee0d0e77c02ee674a18e57c = L.marker(
+                [2.927847, 101.642989],
+                {}
+            ).addTo(map_e077bc3054dcef437ac795272a6b5a23);
+        
+    
+            var icon_1c172297d6aaeb9acf5c5285f0bb0f62 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_73495ac67ee0d0e77c02ee674a18e57c.setIcon(icon_1c172297d6aaeb9acf5c5285f0bb0f62);
+        
+    
+        var popup_cf9d3fedf0e017152014e0cc30cd1bb4 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_f00a56407d3e102835063ae6c804e50d = $(`<div id="html_f00a56407d3e102835063ae6c804e50d" style="width: 100.0%; height: 100.0%;"><a href="/place/starbees">MMU Starbees</a></div>`)[0];
+                popup_cf9d3fedf0e017152014e0cc30cd1bb4.setContent(html_f00a56407d3e102835063ae6c804e50d);
+            
+        
+
+        marker_73495ac67ee0d0e77c02ee674a18e57c.bindPopup(popup_cf9d3fedf0e017152014e0cc30cd1bb4)
+        ;
+
+        
+    
+    
+            marker_73495ac67ee0d0e77c02ee674a18e57c.bindTooltip(
+                `<div>
+                     Click Here
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e76c7ce38cc3584e172141fbf4d34a18 = L.marker(
+                [2.925209, 101.643949],
+                {}
+            ).addTo(map_e077bc3054dcef437ac795272a6b5a23);
+        
+    
+            var icon_ebee03055c9dfe1eb9cedc183f1656c2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_e76c7ce38cc3584e172141fbf4d34a18.setIcon(icon_ebee03055c9dfe1eb9cedc183f1656c2);
+        
+    
+        var popup_8e99e694bf6ca05f856860196af493d2 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_2de719cda065bdd216f4ac852e046888 = $(`<div id="html_2de719cda065bdd216f4ac852e046888" style="width: 100.0%; height: 100.0%;"><a href="/place/hostel_HB3">MMU Hostel HB3</a></div>`)[0];
+                popup_8e99e694bf6ca05f856860196af493d2.setContent(html_2de719cda065bdd216f4ac852e046888);
+            
+        
+
+        marker_e76c7ce38cc3584e172141fbf4d34a18.bindPopup(popup_8e99e694bf6ca05f856860196af493d2)
+        ;
+
+        
+    
+    
+            marker_e76c7ce38cc3584e172141fbf4d34a18.bindTooltip(
+                `<div>
+                     Click Here
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e9f24d3dab2fac4b7ae5c204efc476b6 = L.marker(
+                [2.924669, 101.645518],
+                {}
+            ).addTo(map_e077bc3054dcef437ac795272a6b5a23);
+        
+    
+            var icon_3be77caf137e379fbaf0120b602a2726 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_e9f24d3dab2fac4b7ae5c204efc476b6.setIcon(icon_3be77caf137e379fbaf0120b602a2726);
+        
+    
+        var popup_45988137a1d01fe8703cab388d0fcdc7 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_9c51fde6fdcbddd36f5d3830c90569f2 = $(`<div id="html_9c51fde6fdcbddd36f5d3830c90569f2" style="width: 100.0%; height: 100.0%;"><a href="/place/hostel_HB4">MMU Hostel HB4</a></div>`)[0];
+                popup_45988137a1d01fe8703cab388d0fcdc7.setContent(html_9c51fde6fdcbddd36f5d3830c90569f2);
+            
+        
+
+        marker_e9f24d3dab2fac4b7ae5c204efc476b6.bindPopup(popup_45988137a1d01fe8703cab388d0fcdc7)
+        ;
+
+        
+    
+    
+            marker_e9f24d3dab2fac4b7ae5c204efc476b6.bindTooltip(
+                `<div>
+                     Click Here
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ed2eba1a1bb9474afa42781345cec9a2 = L.marker(
+                [2.92438, 101.643015],
+                {}
+            ).addTo(map_e077bc3054dcef437ac795272a6b5a23);
+        
+    
+            var icon_40e2c2dfef14febdb92bea7747de7053 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_ed2eba1a1bb9474afa42781345cec9a2.setIcon(icon_40e2c2dfef14febdb92bea7747de7053);
+        
+    
+        var popup_d88c0727bf0aed023e59ece8ba669f90 = L.popup({"maxWidth": 300});
+
+        
+            
+                var html_4856ffc72d6371320c828ebcf73381db = $(`<div id="html_4856ffc72d6371320c828ebcf73381db" style="width: 100.0%; height: 100.0%;"><a href="/place/surau">Surau Al-Hidayah</a></div>`)[0];
+                popup_d88c0727bf0aed023e59ece8ba669f90.setContent(html_4856ffc72d6371320c828ebcf73381db);
+            
+        
+
+        marker_ed2eba1a1bb9474afa42781345cec9a2.bindPopup(popup_d88c0727bf0aed023e59ece8ba669f90)
+        ;
+
+        
+    
+    
+            marker_ed2eba1a1bb9474afa42781345cec9a2.bindTooltip(
+                `<div>
+                     Click Here
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>
+</html>
