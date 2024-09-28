@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MMU Geo Photo Album</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <img src="/static/images/MMU-logo.jpg" alt="MMU Logo" class="logo">
+        <h1 class="title">MMU Geo Photo Album</h1>
+        </a>
+    </div>
+
+    <div class="topnav">
+        <div id="#nav-links" class="nav-links">
+            <nav>
+                <a href="/upload">Upload Post</a>
+                <a href="/map">Map</a>
+                <a href="/login">Login</a>
+            </nav>
+        </div>
+        <a href="javascript:void(0);" class="menu-icon" onclick="toggleMenu()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <div class="about-us">
+        <h2>About Us</h2>
+        <p>Welcome to the MMU Geo Photo Album! Explore the campus, view photos, and leave reviews of places around MMU Cyberjaya.</p>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            if (navLinks.style.display === "block") {
+                navLinks.style.display = "none";
+            } else {
+                navLinks.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

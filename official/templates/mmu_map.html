@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MMU Cyberjaya Map</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="header">
+        <img src="/static/images/MMU-logo.jpg" alt="MMU Logo" class="logo">
+        <h1 class="title">MMU Geo Photo Album</h1>
+        
+        </a>
+    </div>
+    
+    <div class="topnav">
+        <div id="#nav-links" class="nav-links">
+            <a href="/">Home</a>
+            <a href="/upload">Upload Post</a>
+            <a href="/login">Login</a>
+        </div>
+        <a href="javascript:void(0);" class="menu-icon" onclick="toggleMenu()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+        <div class="map-container">
+            <iframe src="/map-marker" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <div id="photo-album" style="display:none;">
+            <h2 id="places-name"></h2>
+            <div id="photos"></div>
+        </div>
+    </div>
+    <script>
+        function loadAlbum(place_id) {
+            $.getJSON(`/place/${place_id}`, function(data) {
+                console.log(data);
+
+                if (data.error) {
+                    alert(data.error);
+                } else {
+                    $('#photo-album').show();
+                    $('#place-name').text(data.name);
+
+                    $('#photos').empty();
+                    $.each(data.photos, function(index, photo) {
+                        $('#photos').append(`<div>
+                            <img src="/static/uploads/${photo.filename}" width="200" />
+                            <p>${photo.review}</p>
+                        </div>`);
+                    });
+                }
+            });
+        }
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            if (navLinks.style.display === "block") {
+                navLinks.style.display = "none";
+            } else {
+                navLinks.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>

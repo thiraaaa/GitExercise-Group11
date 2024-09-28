@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Post</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="header">
+        <img src="/static/images/MMU-logo.jpg" alt="MMU Logo" class="logo">
+        <h1 class="title">MMU Geo Photo Album</h1>
+    </div>
+    
+    <div class="topnav">
+        <div id="#nav-links" class="nav-links"></div>
+            <nav>    
+                <a href="/">Home</a>
+                <a href="/map">Map</a>
+                <a href="/login">Login</a>
+            </nav>
+        </div>
+        <a href="javascript:void(0);" class="menu-icon" onclick="toggleMenu()">
+            <i class="fa fa-bars"></i>
+        </a>
+    </div>
+
+    <h1>Upload Post</h1>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <label for="place_id">Select Location:</label>
+        <select name="place_id" id="place_id" required>
+            {% for place in places %}
+                <option value="{{ place.id }}">{{ place.name }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="review">Review:</label><br>
+        <textarea name="review" rows="4" cols="50" required></textarea><br><br>
+
+        <label for="file">Upload Photo (optional):</label><br>
+        <input type="file" name="file" accept="image/*"><br><br>
+
+        <button type="submit" class="upload-button"><i class="fa fa-arrow-up"></i>Upload</button>
+    </form>
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            if (navLinks.style.display === "block") {
+                navLinks.style.display = "none";
+            } else {
+                navLinks.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>
